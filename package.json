@@ -2,10 +2,15 @@
   "name": "lemonjamsbot",
   "version": "1.0.0",
   "main": "index.js",
+  "scriptsComments": {
+    "dev1": "for systemd service - lemon.service"
+  },
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc",
-    "test": "tsc --noEmit"
+    "test": "tsc --noEmit",
+    "dev1": "nodemon k.js",
+    "dev": "tsnd src/index.ts"
   },
   "author": "Andrew Lane <contact@lungers.com>",
   "license": "GPL-3.0",
@@ -16,7 +21,8 @@
     "gram-tgcalls": "^1.3.6",
     "telegraf": "^4.1.0",
     "telegram": "^1.7.23",
-    "tgcalls": "^0.1.4"
+    "tgcalls": "^0.1.4",
+    "ts-node-dev": "^1.1.8"
   },
   "devDependencies": {
     "@types/node": "^14.14.25",

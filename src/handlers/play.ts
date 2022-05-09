@@ -10,14 +10,27 @@ export const playHandler = Composer.command('play', async ctx => {
     }
 
     const [commandEntity] = ctx.message.entities!;
-    const text = ctx.message.text.slice(commandEntity.length + 1) || deunionize(ctx.message.reply_to_message)?.text;
+    const text =
+        ctx.message.text.slice(commandEntity.length + 1) ||
+        deunionize(ctx.message.reply_to_message)?.text;
 
     if (!text) {
         await ctx.reply('You need to specify a YouTube URL.');
         return;
     }
 
-    const index = await addToQueue(chat, text);
+    // const index = await addToQueue(chat, text);
+    let index;
+    try {
+        index = await addToQueue(chat, text);
+    } catch (error) {
+        let err = error as { message: String };
+        // console.log('~sahil');
+        // console.log({ message: error.message });
+        if ((err.message = 'No active group call')) {
+            index = 101;
+        }
+    }
 
     let message;
 
@@ -28,6 +41,11 @@ export const playHandler = Composer.command('play', async ctx => {
 
         case 0:
             message = 'Playing.';
+            break;
+
+        case 101:
+            message =
+                'No active group call, please start a call in this group/channel first!';
             break;
 
         default:
