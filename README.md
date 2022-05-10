@@ -6,6 +6,8 @@ Forked from: https://github.com/tgcallsjs/LemonJamsBot
 
 **Updated list @ https://github.com/tgcalls/awesome-tgcalls**
 
+**What does this do?** https://github.com/tgcallsjs/tgcalls
+
 ```bash
 # Usage
 Add "Nick morris" and bot "Bruno" to the group.
