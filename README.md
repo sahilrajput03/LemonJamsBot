@@ -1,5 +1,9 @@
 # LemonJamsBot
 
+Forked from: https://github.com/tgcallsjs/LemonJamsBot
+
+Also check, `./example1-telegraf.js`, its a sample program of using `telegraf` - a modern api for delaing with telegram api.
+
 ## Setup
 
 -   Install youtube-dl and ffmpeg.
